@@ -1,7 +1,7 @@
 #SVR
 #Arjun S
 #MSMI1603
-data=read.csv("Working_Directory/r/SVR/svm.csv",header=T)
+data=read.csv("svm.csv",header=T)
 head(data)
 plot(data)
 #install packages
@@ -10,8 +10,8 @@ library(e1071)
 plot(data)
 modelsvm = svm(Y~X,data)
 predYsvm = predict(modelsvm,data)
-points(data$X, predYsvm,col="red",pch=16)
-
+points(data$X, predYsvm,col="blue",pch=5)
+predYsvm
 #Calculate paramters
 W = t(modelsvm$coefs) %*% modelsvm$SV
 b = modelsvm$rho
